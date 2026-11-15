@@ -36,7 +36,7 @@ class DefinedPlacer(PlacerBase):
         return "const uint8_t in [], uint8_t out []"
 
     def place_gate_input(self, gate: LogicGate):
-        self.write(f"    uint64_t {gate.name}__in = 0;\n")
+        self.write(f"    uint64_t {gate.name}_in = 0;\n")
 
     def place_connection(self, connection : LogicConnection, out : bool):
         func = "move_bit" if out else "set_bit"
@@ -46,9 +46,41 @@ class DefinedPlacer(PlacerBase):
             f"{connection.src_index});\n")
 
     def place_gate_calc(self, gate : LogicGate):
-        self.write(f"    const uint8_t *{gate.name} = "
+        self.write(f"    const uint8_t *{gate.name}_out = "
             f"calc_gate(&gate_{gate.gate_ref}_table[0][0], "
-            f"GATE_{gate.gate_ref}_OUTW, {gate.name}__in);\n\n")
+            f"GATE_{gate.gate_ref}_OUTW, {gate.name}_in);\n\n")
 
 class UndefinedPlacer(PlacerBase):
-    pass
+    def __init__(self, write : Callable[[str], int], out_u_scale : int = 1):
+        super().__init__(write)
+        self.out_u_scale = out_u_scale
+
+    def get_args(self):
+        return ("const uint8_t in [], const uint8_t in_u [], "
+            "uint8_t out [], uint8_t out_u []")
+    
+    def place_gate_input(self, gate: LogicGate):
+        self.write(f"    uint64_t {gate.name}_in = 0;\n")
+        self.write(f"    uint64_t {gate.name}_in_u = 0;\n")
+        if self.out_u_scale == 1:
+            self.write(f"    uint8_t {gate.name}_out_u [GATE_{gate.gate_ref}_OUTW] = {{0}};\n")
+        else:
+            self.write(f"    uint8_t {gate.name}_out_u "
+                f"[{self.out_u_scale}*GATE_{gate.gate_ref}_OUTW] = {{0}};\n")
+
+    def place_connection(self, connection : LogicConnection, out : bool):
+        func = "move_bit" if out else "set_bit"
+        self.write(f"    {func}({connection.dst_name}, "
+            f"{connection.dst_index}, "
+            f"{connection.src_name}, "
+            f"{connection.src_index});\n")
+        self.write(f"    {func}({connection.dst_name}_u, "
+            f"{connection.dst_index}, "
+            f"{connection.src_name}_u, "
+            f"{connection.src_index});\n")
+
+    def place_gate_calc(self, gate : LogicGate):
+        self.write(f"    const uint8_t *{gate.name}_out = "
+            f"calc_gate(&gate_{gate.gate_ref}_table[0][0], "
+            f"GATE_{gate.gate_ref}_OUTW, {gate.name}_in, "
+            f"{gate.name}_in_u, {gate.name}_out_u);\n\n")

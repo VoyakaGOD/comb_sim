@@ -25,8 +25,9 @@ class GateGraph:
                 src = ("in", drivers[connection])
             else:
                 src = drivers[connection].split(".")
+                src[0] += "_out"
             connections.setdefault(dst[0], []).append(LogicConnection(
-                "&" + dst[0] + "__in", int(dst[1]), src[0], int(src[1])
+                "&" + dst[0] + "_in", int(dst[1]), src[0], int(src[1])
             ))
         for gate in schematics["gates"]:
             self.gates.append(LogicGate(gate, gates[gate], connections[gate]))
@@ -34,7 +35,7 @@ class GateGraph:
         for i, port in enumerate(schematics["output"]):
             src = port.split(".")
             self.output_connections.append(LogicConnection(
-                "out", i, src[0], int(src[1])
+                "out", i, src[0] + "_out", int(src[1])
             ))
 
     # cached

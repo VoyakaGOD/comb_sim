@@ -52,6 +52,15 @@ def main() -> int:
         return -1
 
     gg = GateGraph(json_obj["schematics"])
+
+    for i in [2, 3]:
+        with open(argv[i], "w") as x_file:
+            x_file.write(f"#define COMB_SIM_X_{"OPT" if i == 2 else "PESS"}\n")
+            x_file.write(header)
+            x_file.write(generate_gate_tables(json_obj))
+            placer = UndefinedPlacer(lambda s: x_file.write(s), 4 - i)
+            placer(gg)
+
     with open(argv[4], "w") as no_x_file:
         no_x_file.write("#define COMB_SIM_NO_X\n")
         no_x_file.write(header)
