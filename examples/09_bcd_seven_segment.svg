@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2070" height="1556" viewBox="0 0 2070 1556">
+<rect width="100%" height="100%" fill="white"/>
+<g stroke="#222" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+<path d="M110,90 H124 V1080 H376 V131.6 H390"/>
+<path d="M110,128 H132 V1092 H368 V173.2 H390"/>
+<path d="M110,166 H140 V1104 H360 V214.8 H390"/>
+<path d="M110,204 H148 V1116 H352 V256.4 H390"/>
+<path d="M110,128 H156 V1128 H344 V389.667 H390"/>
+<path d="M110,166 H164 V1140 H336 V416.333 H390"/>
+<path d="M110,90 H172 V1152 H608 V116.667 H670"/>
+<path d="M530,403 H544 V1164 H656 V143.333 H670"/>
+<path d="M810,130 H832 V1176 H928 V130 H950"/>
+<path d="M110,242 H140 V1188 H1200 V116.667 H1230"/>
+<path d="M1090,130 H1128 V1200 H1192 V143.333 H1230"/>
+<path d="M530,116 H576 V1212 H1464 V116.667 H1510"/>
+<path d="M1370,130 H1424 V1224 H1456 V143.333 H1510"/>
+<path d="M530,142 H592 V1236 H1448 V261.667 H1510"/>
+<path d="M1370,130 H1384 V1248 H1496 V288.333 H1510"/>
+<path d="M530,168 H552 V1260 H1488 V406.667 H1510"/>
+<path d="M1370,130 H1400 V1272 H1480 V433.333 H1510"/>
+<path d="M530,194 H568 V1284 H1472 V551.667 H1510"/>
+<path d="M1370,130 H1416 V1296 H1464 V578.333 H1510"/>
+<path d="M530,220 H584 V1308 H1456 V696.667 H1510"/>
+<path d="M1370,130 H1432 V1320 H1448 V723.333 H1510"/>
+<path d="M530,246 H544 V1332 H1496 V841.667 H1510"/>
+<path d="M1370,130 H1392 V1344 H1488 V868.333 H1510"/>
+<path d="M530,272 H560 V1356 H1480 V986.667 H1510"/>
+<path d="M1370,130 H1408 V1368 H1472 V1013.33 H1510"/>
+<path d="M1370,130 H1416 V1380 H1924 V90 H1970"/>
+<path d="M1650,130 H1704 V1392 H1916 V128 H1970"/>
+<path d="M1650,275 H1712 V1404 H1908 V166 H1970"/>
+<path d="M1650,420 H1664 V1416 H1956 V204 H1970"/>
+<path d="M1650,565 H1672 V1428 H1948 V242 H1970"/>
+<path d="M1650,710 H1680 V1440 H1940 V280 H1970"/>
+<path d="M1650,855 H1688 V1452 H1932 V318 H1970"/>
+<path d="M1650,1000 H1696 V1464 H1924 V356 H1970"/>
+</g><g font-family="Arial, sans-serif" fill="#222">
+<circle cx="110" cy="90" r="4" fill="#222"/><text x="100" y="95" text-anchor="end" font-size="15">IN 0</text>
+<circle cx="110" cy="128" r="4" fill="#222"/><text x="100" y="133" text-anchor="end" font-size="15">IN 1</text>
+<circle cx="110" cy="166" r="4" fill="#222"/><text x="100" y="171" text-anchor="end" font-size="15">IN 2</text>
+<circle cx="110" cy="204" r="4" fill="#222"/><text x="100" y="209" text-anchor="end" font-size="15">IN 3</text>
+<circle cx="110" cy="242" r="4" fill="#222"/><text x="100" y="247" text-anchor="end" font-size="15">IN 4</text>
+<circle cx="1970" cy="90" r="4" fill="#222"/><text x="1980" y="95" font-size="15">OUT 0</text>
+<circle cx="1970" cy="128" r="4" fill="#222"/><text x="1980" y="133" font-size="15">OUT 1</text>
+<circle cx="1970" cy="166" r="4" fill="#222"/><text x="1980" y="171" font-size="15">OUT 2</text>
+<circle cx="1970" cy="204" r="4" fill="#222"/><text x="1980" y="209" font-size="15">OUT 3</text>
+<circle cx="1970" cy="242" r="4" fill="#222"/><text x="1980" y="247" font-size="15">OUT 4</text>
+<circle cx="1970" cy="280" r="4" fill="#222"/><text x="1980" y="285" font-size="15">OUT 5</text>
+<circle cx="1970" cy="318" r="4" fill="#222"/><text x="1980" y="323" font-size="15">OUT 6</text>
+<circle cx="1970" cy="356" r="4" fill="#222"/><text x="1980" y="361" font-size="15">OUT 7</text>
+<text x="460.0" y="78" text-anchor="middle" font-size="14">digit_decoder : seven_segment</text>
+<g transform="translate(390,90)" data-symbol="custom" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M0,0 H140 V208 H0 Z"/>
+<path d="M0,41.6 H0" fill="none"/>
+<text x="6" y="36.6" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,83.2 H0" fill="none"/>
+<text x="6" y="78.2" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M0,124.8 H0" fill="none"/>
+<text x="6" y="119.8" fill="#222" stroke="none" font-size="11">2</text>
+<path d="M0,166.4 H0" fill="none"/>
+<text x="6" y="161.4" fill="#222" stroke="none" font-size="11">3</text>
+<path d="M140,26 H140" fill="none"/>
+<text x="137" y="21" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M140,52 H140" fill="none"/>
+<text x="137" y="47" text-anchor="end" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M140,78 H140" fill="none"/>
+<text x="137" y="73" text-anchor="end" fill="#222" stroke="none" font-size="11">2</text>
+<path d="M140,104 H140" fill="none"/>
+<text x="137" y="99" text-anchor="end" fill="#222" stroke="none" font-size="11">3</text>
+<path d="M140,130 H140" fill="none"/>
+<text x="137" y="125" text-anchor="end" fill="#222" stroke="none" font-size="11">4</text>
+<path d="M140,156 H140" fill="none"/>
+<text x="137" y="151" text-anchor="end" fill="#222" stroke="none" font-size="11">5</text>
+<path d="M140,182 H140" fill="none"/>
+<text x="137" y="177" text-anchor="end" fill="#222" stroke="none" font-size="11">6</text>
+<text x="70.0" y="109.0" text-anchor="middle" fill="#222" stroke="none" font-size="15">seven_segment</text>
+</g>
+<text x="460.0" y="351" text-anchor="middle" font-size="14">or_001 : or</text>
+<g transform="translate(390,363)" data-symbol="or" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 Q82,10 112,40.0 Q82,70 22,70 Q48,40.0 22,10 Z"/>
+<path d="M0,26.6667 H32.4321" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H32.4321" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="740.0" y="78" text-anchor="middle" font-size="14">and_002 : and</text>
+<g transform="translate(670,90)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1020.0" y="78" text-anchor="middle" font-size="14">not_003 : not</text>
+<g transform="translate(950,90)" data-symbol="buf" data-inverted="true" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 L108,40.0 L22,70 Z"/>
+<path d="M0,40 H22" fill="none"/>
+<text x="2" y="35" fill="#222" stroke="none" font-size="11">0</text>
+<circle cx="113" cy="40" r="5"/>
+<path d="M118,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1300.0" y="78" text-anchor="middle" font-size="14">and_004 : and</text>
+<g transform="translate(1230,90)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1580.0" y="78" text-anchor="middle" font-size="14">and_005 : and</text>
+<g transform="translate(1510,90)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1580.0" y="223" text-anchor="middle" font-size="14">and_006 : and</text>
+<g transform="translate(1510,235)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1580.0" y="368" text-anchor="middle" font-size="14">and_007 : and</text>
+<g transform="translate(1510,380)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1580.0" y="513" text-anchor="middle" font-size="14">and_008 : and</text>
+<g transform="translate(1510,525)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1580.0" y="658" text-anchor="middle" font-size="14">and_009 : and</text>
+<g transform="translate(1510,670)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1580.0" y="803" text-anchor="middle" font-size="14">and_010 : and</text>
+<g transform="translate(1510,815)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+<text x="1580.0" y="948" text-anchor="middle" font-size="14">and_011 : and</text>
+<g transform="translate(1510,960)" data-symbol="and" data-inverted="false" stroke="#222" stroke-width="2" fill="white">
+<path d="M22,10 H66 C128,10 128,70 66,70 H22 Z"/>
+<path d="M0,26.6667 H22" fill="none"/>
+<text x="2" y="21.6667" fill="#222" stroke="none" font-size="11">0</text>
+<path d="M0,53.3333 H22" fill="none"/>
+<text x="2" y="48.3333" fill="#222" stroke="none" font-size="11">1</text>
+<path d="M112,40 H140" fill="none"/>
+<text x="137" y="35" text-anchor="end" fill="#222" stroke="none" font-size="11">0</text>
+</g>
+</g></svg>

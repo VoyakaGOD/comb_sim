@@ -1,0 +1,109 @@
+{
+  "gates": {
+    "seven_segment": {
+      "inw": 4,
+      "outw": 7,
+      "table": [
+        "1111110",
+        "0110000",
+        "1101101",
+        "1111001",
+        "0110011",
+        "1011011",
+        "1011111",
+        "1110000",
+        "1111111",
+        "1111011",
+        "0000000",
+        "0000000",
+        "0000000",
+        "0000000",
+        "0000000",
+        "0000000"
+      ]
+    },
+    "or": {
+      "inw": 2,
+      "outw": 1,
+      "table": [
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    "and": {
+      "inw": 2,
+      "outw": 1,
+      "table": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "not": {
+      "inw": 1,
+      "outw": 1,
+      "table": [
+        1,
+        0
+      ]
+    }
+  },
+  "schematics": {
+    "inw": 5,
+    "outw": 8,
+    "gates": {
+      "digit_decoder": "seven_segment",
+      "or_001": "or",
+      "and_002": "and",
+      "not_003": "not",
+      "and_004": "and",
+      "and_005": "and",
+      "and_006": "and",
+      "and_007": "and",
+      "and_008": "and",
+      "and_009": "and",
+      "and_010": "and",
+      "and_011": "and"
+    },
+    "drivers": {
+      "digit_decoder.0": 0,
+      "digit_decoder.1": 1,
+      "digit_decoder.2": 2,
+      "digit_decoder.3": 3,
+      "or_001.0": 1,
+      "or_001.1": 2,
+      "and_002.0": 0,
+      "and_002.1": "or_001.0",
+      "not_003.0": "and_002.0",
+      "and_004.0": 4,
+      "and_004.1": "not_003.0",
+      "and_005.0": "digit_decoder.0",
+      "and_005.1": "and_004.0",
+      "and_006.0": "digit_decoder.1",
+      "and_006.1": "and_004.0",
+      "and_007.0": "digit_decoder.2",
+      "and_007.1": "and_004.0",
+      "and_008.0": "digit_decoder.3",
+      "and_008.1": "and_004.0",
+      "and_009.0": "digit_decoder.4",
+      "and_009.1": "and_004.0",
+      "and_010.0": "digit_decoder.5",
+      "and_010.1": "and_004.0",
+      "and_011.0": "digit_decoder.6",
+      "and_011.1": "and_004.0"
+    },
+    "output": [
+      "and_004.0",
+      "and_005.0",
+      "and_006.0",
+      "and_007.0",
+      "and_008.0",
+      "and_009.0",
+      "and_010.0",
+      "and_011.0"
+    ]
+  }
+}
