@@ -15,10 +15,32 @@ class LogicGate:
 
 class GateGraph:
     def __init__(self, schematics : dict):
-        pass
+        self.gates = []
+        gates = schematics["gates"]
+        drivers = schematics["drivers"]
+        connections = {}
+        for connection in drivers:
+            dst = connection.split(".")
+            if isinstance(drivers[connection], int):
+                src = ("in", drivers[connection])
+            else:
+                src = drivers[connection].split(".")
+            connections.setdefault(dst[0], []).append(LogicConnection(
+                "&" + dst[0] + "__in", int(dst[1]), src[0], int(src[1])
+            ))
+        for gate in schematics["gates"]:
+            self.gates.append(LogicGate(gate, gates[gate], connections[gate]))
+        self.output_connections = []
+        for i, port in enumerate(schematics["output"]):
+            src = port.split(".")
+            self.output_connections.append(LogicConnection(
+                "out", i, src[0], int(src[1])
+            ))
 
-    def get_ordered_list(self): # cached
-        return [LogicGate("A", "xnor", [LogicConnection("&A_in", 0, "in", 0), LogicConnection("&A_in", 1, "in", 1)])]
+    # cached
+    def get_ordered_list(self):
+        return self.gates
 
-    def get_output_connections(self): # cached
-        return [LogicConnection("out", 0, "A", 0)]
+    # cached
+    def get_output_connections(self):
+        return self.output_connections

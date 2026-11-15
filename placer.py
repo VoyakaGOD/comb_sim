@@ -36,7 +36,7 @@ class DefinedPlacer(PlacerBase):
         return "const uint8_t in [], uint8_t out []"
 
     def place_gate_input(self, gate: LogicGate):
-        self.write(f"    uint64_t {gate.name}_in = 0;\n")
+        self.write(f"    uint64_t {gate.name}__in = 0;\n")
 
     def place_connection(self, connection : LogicConnection, out : bool):
         func = "move_bit" if out else "set_bit"
@@ -48,7 +48,7 @@ class DefinedPlacer(PlacerBase):
     def place_gate_calc(self, gate : LogicGate):
         self.write(f"    const uint8_t *{gate.name} = "
             f"calc_gate(&gate_{gate.gate_ref}_table[0][0], "
-            f"GATE_{gate.gate_ref}_OUTW, {gate.name}_in);\n")
+            f"GATE_{gate.gate_ref}_OUTW, {gate.name}__in);\n\n")
 
 class UndefinedPlacer(PlacerBase):
     pass

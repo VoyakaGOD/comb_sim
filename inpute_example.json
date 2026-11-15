@@ -41,5 +41,47 @@
       "table": ["0001", "0010", "0100", "1000"]
     }
   },
-  "schematics": {}
+  "schematics": {
+    "inw": 4,
+    "outw": 1,
+    "gates": {
+      "and_g":    "and3",
+      "or_g":     "or3",
+      "xnor_g":   "xnor",
+      "xor_g":    "inv",
+      "not_g":    "inv",
+      "mux_low":  "mux2",
+      "mux_high": "mux2",
+      "mux_out":  "mux2"
+    },
+    "drivers": {
+      "and_g.0":    0,
+      "and_g.1":    1,
+      "and_g.2":    0,
+
+      "or_g.0":     0,
+      "or_g.1":     1,
+      "or_g.2":     0,
+
+      "xnor_g.0":   0,
+      "xnor_g.1":   1,
+
+      "xor_g.0":    "xnor_g.0",
+
+      "not_g.0":    0,
+
+      "mux_low.0":  "and_g.0",
+      "mux_low.1":  "or_g.0",
+      "mux_low.2":  2,
+
+      "mux_high.0": "xor_g.0",
+      "mux_high.1": "not_g.0",
+      "mux_high.2": 2,
+
+      "mux_out.0":  "mux_low.0",
+      "mux_out.1":  "mux_high.0",
+      "mux_out.2":  3
+    },
+    "output": ["mux_out.0"]
+  }
 }
