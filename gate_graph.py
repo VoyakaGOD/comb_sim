@@ -15,22 +15,39 @@ class LogicGate:
 
 class GateGraph:
     def __init__(self, schematics : dict):
-        self.gates = []
         gates = schematics["gates"]
         drivers = schematics["drivers"]
-        connections = {}
+        logic_connections = {}
+        top_connections = {}
+        indeg = {gate: 0 for gate in gates}
         for connection in drivers:
             dst = connection.split(".")
-            if isinstance(drivers[connection], int):
+            src = str(drivers[connection]).split(".")
+            if len(src) == 1:
                 src = ("in", drivers[connection])
             else:
-                src = drivers[connection].split(".")
+                indeg[dst[0]] += 1
+                top_connections.setdefault(src[0], []).append(dst[0])
                 src[0] += "_out"
-            connections.setdefault(dst[0], []).append(LogicConnection(
+            logic_connections.setdefault(dst[0], []).append(LogicConnection(
                 "&" + dst[0] + "_in", int(dst[1]), src[0], int(src[1])
             ))
-        for gate in schematics["gates"]:
-            self.gates.append(LogicGate(gate, gates[gate], connections[gate]))
+        self.gates = []
+        queue = {}
+        ready_gates = []
+        for gate in gates:
+            item = LogicGate(gate, gates[gate], logic_connections[gate])
+            if indeg[gate] == 0:
+                ready_gates.append(item)
+            else:
+                queue[gate] = item
+        while len(ready_gates) > 0:
+            item = ready_gates.pop()
+            self.gates.append(item)
+            for connection in top_connections.setdefault(item.name, []):
+                indeg[connection] -= 1
+                if indeg[connection] == 0:
+                    ready_gates.append(queue.pop(connection))
         self.output_connections = []
         for i, port in enumerate(schematics["output"]):
             src = port.split(".")
@@ -38,10 +55,8 @@ class GateGraph:
                 "out", i, src[0] + "_out", int(src[1])
             ))
 
-    # cached
     def get_ordered_list(self):
         return self.gates
 
-    # cached
     def get_output_connections(self):
         return self.output_connections
