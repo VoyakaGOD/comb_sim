@@ -1,13 +1,14 @@
 import json
 from sys import argv
+from placer import *
 
 def chunks(value : int, n: int = 8):
     if value == 0:
-        yield "0x0"
+        yield "0x00"
     while value > 0:
         dec = value % (10**n)
         value //= (10**n)
-        yield hex(int(str(dec), 2))
+        yield f"0x{int(str(dec), 2):02X}"
 
 def generate_gate_tables(json_obj : dict) -> str:
     if "gates" not in json_obj:
@@ -35,9 +36,6 @@ def generate_gate_tables(json_obj : dict) -> str:
         tables += ",\n".join(lines) + "\n};\n\n"
     return tables
 
-def compile(schematics : dict):
-    pass # graph
-
 def main() -> int:
     if len(argv) < 4:
         print("Usage: [python] comb.py <in> <out-x-opt> <out-x-pess> [out-no-x]")
@@ -49,9 +47,17 @@ def main() -> int:
     with open(argv[1], "r") as input_file:
         json_obj : dict = json.load(input_file)
 
-    with open(argv[3], "w") as x_pess_file:
-        x_pess_file.write(header)
-        x_pess_file.write(generate_gate_tables(json_obj))
+    if "schematics" not in json_obj:
+        print("No schematics in source json !!!")
+        return -1
+
+    gg = GateGraph(json_obj["schematics"])
+    with open(argv[4], "w") as no_x_file:
+        no_x_file.write("#define COMB_SIM_NO_X\n")
+        no_x_file.write(header)
+        no_x_file.write(generate_gate_tables(json_obj))
+        placer = DefinedPlacer(lambda s: no_x_file.write(s))
+        placer(gg)
 
     return 0
 
