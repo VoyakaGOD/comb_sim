@@ -61,12 +61,13 @@ def main() -> int:
             placer = UndefinedPlacer(lambda s: x_file.write(s), 4 - i)
             placer(gg)
 
-    with open(argv[4], "w") as no_x_file:
-        no_x_file.write("#define COMB_SIM_NO_X\n")
-        no_x_file.write(header)
-        no_x_file.write(generate_gate_tables(json_obj))
-        placer = DefinedPlacer(lambda s: no_x_file.write(s))
-        placer(gg)
+    if len(argv) > 4:
+        with open(argv[4], "w") as no_x_file:
+            no_x_file.write("#define COMB_SIM_NO_X\n")
+            no_x_file.write(header)
+            no_x_file.write(generate_gate_tables(json_obj))
+            placer = DefinedPlacer(lambda s: no_x_file.write(s))
+            placer(gg)
 
     return 0
 

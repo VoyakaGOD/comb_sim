@@ -50,10 +50,15 @@ class GateGraph:
                     ready_gates.append(queue.pop(connection))
         self.output_connections = []
         for i, port in enumerate(schematics["output"]):
-            src = port.split(".")
-            self.output_connections.append(LogicConnection(
-                "out", i, src[0] + "_out", int(src[1])
-            ))
+            src = str(port).split(".")
+            if len(src) == 1:
+                self.output_connections.append(LogicConnection(
+                    "out", i, "in", int(port)
+                ))
+            else:
+                self.output_connections.append(LogicConnection(
+                    "out", i, src[0] + "_out", int(src[1])
+                ))
 
     def get_ordered_list(self):
         return self.gates
