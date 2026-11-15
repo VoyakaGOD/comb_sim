@@ -26,3 +26,11 @@ void set_bit(uint64_t *dst, uint8_t dst_bit, const uint8_t *src, uint8_t src_add
 
     *dst = ((*dst & ~mask) | (((uint64_t)bit) << dst_bit));
 }
+
+#ifdef COMB_SIM_NO_X
+    const uint8_t *calc_gate(const uint8_t *table, uint8_t outw, uint64_t in)
+    {
+        return table + (outw * in);
+    }
+#endif
+

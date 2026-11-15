@@ -26,12 +26,17 @@ def generate_gate_tables(json_obj : dict) -> str:
             continue
         inw = gate_description["inw"]
         outw = gate_description["outw"]
-        tables += f"const uint8_t gate_{gate_name}_table[{1 << inw}][{(outw + 7) // 8}] = {{\n"
+        out_size = (outw + 7) // 8
+        tables += f"#define GATE_{gate_name}_OUTW {out_size}\n"
+        tables += f"const uint8_t gate_{gate_name}_table[{1 << inw}][{out_size}] = {{\n"
         lines = []
         for out in gate_description["table"]:
             lines.append("    { " + ", ".join(chunks(int(out))) + " }")
         tables += ",\n".join(lines) + "\n};\n\n"
     return tables
+
+def compile(schematics : dict):
+    pass # graph
 
 def main() -> int:
     if len(argv) < 4:
